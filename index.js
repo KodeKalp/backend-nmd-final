@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(cors());
 
 
-const port = 3111
+const port = process.env.PORT
 
-mongoose.connect("mongodb+srv://vaibhavkatre005:cwfAn86SRKWLLLAk@cluster0.rwwla38.mongodb.net/bookstore?retryWrites=true&w=majority&appName=Cluster0", {
+mongoose.connect(process.env.MONGODB_URL, {
 }).then(()=>{
     console.log("Mongo DB Connected");
 }).catch(error =>{
