@@ -52,7 +52,7 @@ app.get('/myshorturl/:randomStr', async(req, res)=>{
     try {
         const MyUrl = await Url.findOne({randomStr})
         console.log(MyUrl, "MyUrl")
-        // res.redirect(MyUrl.url)
+        res.redirect(MyUrl.url)
     }
     catch(err){
         console.log(err, "errorrororo");
